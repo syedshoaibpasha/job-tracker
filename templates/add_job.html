@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Job</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h1>➕ Add Job Application</h1>
+
+    <form method="POST">
+
+        <label>Company Name:</label>
+        <br>
+
+        <input
+            type="text"
+            name="company"
+            placeholder="Enter company name"
+            required
+        >
+
+        <br><br>
+
+        <label>Job Role:</label>
+        <br>
+
+        <input
+            type="text"
+            name="role"
+            placeholder="Enter job role"
+            required
+        >
+
+        <br><br>
+
+        <label>Status:</label>
+        <br>
+
+        <select name="status" required>
+            <option value="Applied">Applied</option>
+            <option value="Interview">Interview</option>
+            <option value="Selected">Selected</option>
+            <option value="Rejected">Rejected</option>
+        </select>
+
+        <br><br>
+
+        <label>Application Date:</label>
+        <br>
+
+        <input
+            type="date"
+            name="application_date"
+            required
+        >
+
+        <br><br>
+
+        <label>Job Link:</label>
+        <br>
+
+        <input
+            type="url"
+            name="job_link"
+            placeholder="https://example.com/job"
+        >
+
+        <br><br>
+
+        <label>Notes:</label>
+        <br>
+
+        <textarea
+            name="notes"
+            rows="5"
+            cols="40"
+            placeholder="Add notes about this application..."
+        ></textarea>
+
+        <br><br>
+
+        <button type="submit">
+            Add Job
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/">
+        ← Back to Job Tracker
+    </a>
+
+</body>
+
+</html>

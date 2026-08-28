@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Job</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h1>✏️ Edit Job Application</h1>
+
+    <form method="POST">
+
+        <label>Company Name:</label>
+        <br>
+
+        <input
+            type="text"
+            name="company"
+            value="{{ job[1] }}"
+            required
+        >
+
+        <br><br>
+
+        <label>Job Role:</label>
+        <br>
+
+        <input
+            type="text"
+            name="role"
+            value="{{ job[2] }}"
+            required
+        >
+
+        <br><br>
+
+        <label>Status:</label>
+        <br>
+
+        <select name="status" required>
+
+            <option value="Applied"
+                {% if job[3] == "Applied" %}selected{% endif %}>
+                Applied
+            </option>
+
+            <option value="Interview"
+                {% if job[3] == "Interview" %}selected{% endif %}>
+                Interview
+            </option>
+
+            <option value="Selected"
+                {% if job[3] == "Selected" %}selected{% endif %}>
+                Selected
+            </option>
+
+            <option value="Rejected"
+                {% if job[3] == "Rejected" %}selected{% endif %}>
+                Rejected
+            </option>
+
+        </select>
+
+        <br><br>
+
+        <label>Application Date:</label>
+        <br>
+
+        <input
+            type="date"
+            name="application_date"
+            value="{{ job[4] or '' }}"
+            required
+        >
+
+        <br><br>
+
+        <button type="submit">
+            Update Job
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/">
+        ← Back to Job Tracker
+    </a>
+
+</body>
+
+</html>
