@@ -198,8 +198,7 @@ def edit_job(job_id):
         "edit_job.html",
         job=job
     )
+init_db()
 
-
-if __name__ == "__main__":
-    init_db()
+if _ _name_ _ == "_ _main_ _":
     app.run(debug=True)
