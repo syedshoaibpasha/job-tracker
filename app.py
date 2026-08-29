@@ -200,5 +200,5 @@ def edit_job(job_id):
     )
 init_db()
 
-if _ _name_ _ == "_ _main_ _":
+if __name__ == "__main__":
     app.run(debug=True)
